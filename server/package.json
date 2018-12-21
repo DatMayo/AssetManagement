@@ -1,0 +1,21 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "The Asset-Manager Serversystem",
+  "main": "app.js",
+  "keywords": [],
+  "author": "Franze, Mario <mfranze@germandev.de>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.42.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GermanDevCoding/AssetManagement.git"
+  }
+}
