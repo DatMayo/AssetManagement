@@ -23,11 +23,32 @@ const Accounts = connection.define('Accounts',
 		Password: sequelize.STRING,
 		Mail: sequelize.STRING,
 	});
-
+const Category = connection.define('Category',
+	{
+		Name: sequelize.STRING,
+		CreatedFrom: sequelize.INTEGER,
+	});
+const Item = connection.define('Item',
+	{
+		Name: sequelize.STRING,
+		Amount: sequelize.INTEGER,
+		Category: sequelize.STRING,
+		CreatedFrom: sequelize.INTEGER,
+		ExternalProductNumber: sequelize.STRING,
+	});
+const State = connection.define('State',
+	{
+		Name: sequelize.STRING,
+		Category: sequelize.INTEGER,
+		NextState: sequelize.INTEGER,
+	});
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.set('AccountSQL', Accounts);
+app.set('CategorySQL', Category);
+app.set('ItemSQL', Item);
+app.set('StateSQL', State);
 
 app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public')));
