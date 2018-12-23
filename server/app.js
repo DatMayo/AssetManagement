@@ -51,6 +51,8 @@ app.set('CategorySQL', Category);
 app.set('ItemSQL', Item);
 app.set('StateSQL', State);
 
+app.use(require('./routes/admin/getAccounts'));
+
 app.use(helmet());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
