@@ -35,6 +35,7 @@ const Item = connection.define('Item',
 		Category: sequelize.STRING,
 		CreatedFrom: sequelize.INTEGER,
 		ExternalProductNumber: sequelize.STRING,
+		MasterItem: sequelize.INTEGER,
 	});
 const State = connection.define('State',
 	{
