@@ -19,16 +19,18 @@ const port = process.env.port || 3000;
 
 const Accounts = connection.define('Accounts',
 	{
+		ID:
+		{
+			type: sequelize.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
 		Username: sequelize.STRING,
-		Password: sequelize.STRING,
+		FirstName: sequelize.STRING,
+		LastName: sequelize.STRING,
 		Mail: sequelize.STRING,
 	});
-const Category = connection.define('Category',
-	{
-		Name: sequelize.STRING,
-		CreatedFrom: sequelize.INTEGER,
-	});
-const Item = connection.define('Item',
+const Asset = connection.define('Asset',
 	{
 		Name: sequelize.STRING,
 		Amount: sequelize.INTEGER,
@@ -37,18 +39,47 @@ const Item = connection.define('Item',
 		ExternalProductNumber: sequelize.STRING,
 		MasterItem: sequelize.INTEGER,
 	});
+const Category = connection.define('Category',
+	{
+		ID:
+		{
+			type: sequelize.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
+		Name: sequelize.STRING,
+		CreatedFrom: sequelize.INTEGER,
+	});
+const Security = connection.define('Security',
+	{
+		ID:
+		{
+			type: sequelize.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
+		UID: sequelize.INTEGER,
+		Password: sequelize.STRING,
+	});
 const State = connection.define('State',
 	{
+		ID:
+		{
+			type: sequelize.INTEGER,
+			primaryKey: true,
+			autoIncrement: true,
+		},
 		Name: sequelize.STRING,
-		Category: sequelize.INTEGER,
+		CategoryID: sequelize.INTEGER,
 		NextState: sequelize.INTEGER,
 	});
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.set('AccountSQL', Accounts);
+app.set('AssetSQL', Asset);
 app.set('CategorySQL', Category);
-app.set('ItemSQL', Item);
+app.set('SecuritySQL', Security);
 app.set('StateSQL', State);
 
 app.use(require('./routes/admin/getAccounts'));
