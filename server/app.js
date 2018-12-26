@@ -98,6 +98,7 @@ app.use(session({
 }));
 
 app.use(require('./routes/admin/getAccounts'));
+app.use(require('./routes/admin/accounts/create'));
 
 app.use(require('./routes/category/create'));
 app.use(require('./routes/category/getAll'));
