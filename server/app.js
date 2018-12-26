@@ -97,6 +97,8 @@ app.use(session({
 	expires: new Date(Date.now() + (30 * 86400 * 1000)),
 }));
 
+app.use(require('./routes/login'));
+
 app.use(require('./routes/admin/getAccounts'));
 app.use(require('./routes/admin/accounts/create'));
 
