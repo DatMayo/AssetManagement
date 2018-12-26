@@ -1,0 +1,7 @@
+{
+	"verbose": true,
+	"ignore": ["views/*", "public/*", "config/*"],
+	"events": {
+		"start": "node -e console.clear()"
+	}
+}
