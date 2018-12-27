@@ -99,7 +99,7 @@ app.use(session({
 
 app.use(require('./routes/login'));
 
-app.use(require('./routes/admin/getAccounts'));
+app.use(require('./routes/admin/accounts/getAll'));
 app.use(require('./routes/admin/accounts/create'));
 
 app.use(require('./routes/category/create'));
