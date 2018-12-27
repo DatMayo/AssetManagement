@@ -72,7 +72,7 @@ const State = connection.define('State',
 		},
 		Name: sequelize.STRING,
 		CategoryID: sequelize.INTEGER,
-		NextState: sequelize.INTEGER,
+		NextState: sequelize.STRING,
 	});
 // #endregion
 
