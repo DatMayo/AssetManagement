@@ -22,7 +22,7 @@ router.post('/category/create', (req, res) =>
 			Categories.create(
 				{
 					Name: catName,
-					CreatedFrom: -1,
+					CreatedFrom: SesData[sid].Account.ID,
 				})
 				.then(() =>
 				{
