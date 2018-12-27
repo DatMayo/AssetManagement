@@ -99,11 +99,14 @@ app.use(session({
 
 app.use(require('./routes/login'));
 
-app.use(require('./routes/admin/accounts/getAll'));
 app.use(require('./routes/admin/accounts/create'));
+app.use(require('./routes/admin/accounts/getAll'));
 
 app.use(require('./routes/category/create'));
 app.use(require('./routes/category/getAll'));
+
+app.use(require('./routes/state/create'));
+app.use(require('./routes/state/getAll'));
 
 connection.sync().then(() =>
 {
